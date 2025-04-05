@@ -46,9 +46,9 @@ export default function Hero() {
         <div className="max-lg:hidden w-[250px] xxl:w-[350px] h-[250px] xxl:h-[350px] absolute top-[6%] blur-[85px] left-[-12%] bg-primary/50"></div>
         <div className="max-lg:hidden w-[250px] xxl:w-[350px] h-[250px] xxl:h-[350px] absolute bottom-[6%] blur-[85px] right-[-8%] bg-accent1/50"></div>
 
-        <div className="container pt-[60px] pb-[70px] grid grid-cols-12 gap-6 items-center pl-5 lg:pl-36">
+        <div className="container pt-[60px] pb-[70px] grid grid-cols-12 gap-6 items-center pl-1 lg:pl-36">
           <div className="col-span-12 lg:col-span-6 relative z-[2] max-lg:flex max-lg:flex-col max-lg:items-center max-lg:text-center">
-            <h2 className="display-4 text-[2.25rem] font-bold  mb-4 fade_up_anim text-white">
+            <h2 className="display-4 text-[2.25rem] font-bold  mb-4 fade_up_anim text-white text-center lg:text-left px-5 lg:px-0">
               Wallet Issues?{' '}
               <span className="text-primary display-4 text-[2.25rem] font-bold underline">
                 We've Got You
