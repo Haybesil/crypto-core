@@ -18,7 +18,7 @@ const FAQSection = () => {
       />
       <div className="container relative z-[2] pt-[70px] pb-[70px] grid grid-cols-12 gap-6 xl:gap-10 items-center">
         {/* Left: Form */}
-        <div className="fade_up_anim col-span-12 lg:col-span-5 p-4 lg:p-6 xl:p-8 xxl:px-10 bg-accent5 border border-accent4 rounded-xl ml-6 lg:ml-28">
+        <div className="fade_up_anim col-span-12 lg:col-span-5 p-4 lg:p-6 xl:p-8 xxl:px-10 bg-accent5 border border-accent4 rounded-xl mx-2 lg:mx-0 lg:ml-28">
           <p className="lg:text-[30px] text-neutral2 font-semibold mb-3">FAQ</p>
           <h2 className="mb-4 lg:text-[25px] font-semibold text-neutral1">
             Your questions{' '}

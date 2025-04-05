@@ -18,12 +18,12 @@ export default function Section2() {
         />
 
         <div className="container pt-[70px] pb-[70px]">
-          <h2 className="mb-10 xl:mb-[60px] text-center fade-up-anim text-white lg:text-3xl">
+          <h2 className="mb-10 xl:mb-[60px] text-center fade-up-anim text-white text-[26px] lg:text-3xl">
             How To Get{' '}
             <span className="h2 text-primary font-bold  underline">Started</span>
           </h2>
 
-          <div className="grid grid-cols-12 gap-4 xl:gap-6 z-[2] relative text-center text-neutral1/80 after:w-full after:h-full after:xl:h-[90%] after:absolute after:left-0 after:rounded-xl after:top-0 after:xl:top-[5%] after:bg-accent6 after:z-[-1] ml-5 lg:ml-36">
+          <div className="grid grid-cols-12 gap-4 xl:gap-6 z-[2] relative text-center text-neutral1/80 after:w-full after:h-full after:xl:h-[90%] after:absolute after:left-0 after:rounded-xl after:top-0 after:xl:top-[5%] after:bg-accent6 after:z-[-1] ml-2 lg:ml-36">
             {/* Step 01 */}
             <div
               data-delay="0.05"

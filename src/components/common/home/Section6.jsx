@@ -15,7 +15,7 @@ export default function Section6() {
             Trusted by
           </h2>
           <marquee behavior="" direction="left">
-            <div className="swiper brand-slider-one fade_up_anim">
+            <div className="swiper brand-slider-one fade_up_ani">
               <div
                 className="swiper-wrapper flex ease-linear"
                 style={{

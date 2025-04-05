@@ -33,7 +33,7 @@ export default function Section5() {
           <div className="col-span-12 lg:col-span-7">
             <h2
               data-delay=".05"
-              className="fade_up_anim mb-4 lg:text-[40px] font-bold text-neutral1"
+              className="fade_up_anim mb-4 text-[18px] lg:text-[40px] font-bold text-neutral1"
               style={{ transform: 'translate(0px, 0px)', opacity: 1 }}
             >
               Unlocking <span className="text-primary h2 underline">the</span>{' '}
