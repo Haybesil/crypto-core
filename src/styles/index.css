@@ -30,7 +30,7 @@ body {
 .features-item {
   background: var(--tg-secondary-color);
   border: 1px solid rgba(43, 44, 56, .46);
-  padding: 40px 70px 40px 55px;
+  padding: 40px 50px 40px 30px;
   margin-bottom: 30px;
 }
 
