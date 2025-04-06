@@ -21,7 +21,7 @@ export default function Section5() {
           src="/images/try-el-2.png"
           alt=""
         />
-        <div className="container pt-[70px] pb-[70px] grid grid-cols-12 gap-6 xl:gap-10 items-center relative z-[2] pl-6 lg:pl-36">
+        <div className="container pt-[70px] pb-[70px] grid grid-cols-12 gap-6 xl:gap-10 items-center relative z-[2] pl-6 lg:pl-28">
           <div className="col-span-12 lg:col-span-5">
             <img
               src="/images/try.png"
