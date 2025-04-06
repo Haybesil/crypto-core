@@ -28,21 +28,14 @@ body {
 }
 
 .features-item {
-  display: flex;
-  align-items: center;
   background: var(--tg-secondary-color);
   border: 1px solid rgba(43, 44, 56, .46);
-  border-radius: 15px;
   padding: 40px 70px 40px 55px;
   margin-bottom: 30px;
 }
 
 .features-content .title {
-  font-size: 35px;
-  font-weight: 600;
   letter-spacing: -.84px;
-  margin-bottom: 25px;
-  color: #ffffff;
 }
 
 .features-content p {

@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from '../base/Modal';
 
 export default function Section2() {
+  const [toggleConnect, setToggleConnect] = useState(false);
+
+  const openModal = () => {
+    setToggleConnect(true);
+  };
   return (
     <div>
       <section className="bg-accent5 relative overflow-x-hidden">
@@ -20,7 +26,9 @@ export default function Section2() {
         <div className="container pt-[70px] pb-[70px]">
           <h2 className="mb-10 xl:mb-[60px] text-center fade-up-anim text-white text-[26px] lg:text-3xl">
             How To Get{' '}
-            <span className="h2 text-primary font-bold  underline">Started</span>
+            <span className="h2 text-primary font-bold  underline">
+              Started
+            </span>
           </h2>
 
           <div className="grid grid-cols-12 gap-4 xl:gap-6 z-[2] relative text-center text-neutral1/80 after:w-full after:h-full after:xl:h-[90%] after:absolute after:left-0 after:rounded-xl after:top-0 after:xl:top-[5%] after:bg-accent6 after:z-[-1] ml-2 lg:ml-28">
@@ -33,19 +41,23 @@ export default function Section2() {
               <div className="size-[60px] flex items-center justify-center text-primary text-2xl f-center rounded-full bg-neutral1 mb-4 xl:mb-6">
                 <i className="ti ti-user-plus"></i>
               </div>
-              <h4 className="mb-4 xl:mb-6 font-semibold text-[18px]">Connect Wallet</h4>
+              <h4 className="mb-4 xl:mb-6 font-semibold text-[18px]">
+                Connect Wallet
+              </h4>
               <p className="mb-7 xl:mb-10 lg:text-lg text-neutral4">
                 Ensure your wallet is connected to our platform to initiate
                 troubleshooting.
               </p>
               <div
-                 className="flex gap-6 fade_up_anim  w-fit border-[1px] border-neutral1 rounded-[50px]"
+                className="flex gap-6 fade_up_anim  w-fit border-[1px] border-neutral1 rounded-[50px]"
                 data-delay="0.4"
                 style={{ transform: 'translate(0px, 0px)', opacity: 1 }}
               >
                 <button
-                  onClick={() => openModal_()}
-                   className="btn-primary bg-neutral1 m-[2px] text-primary py-2 px-3 rounded-[50px] hover:bg-transparent hover:text-white transition-all duration-300 ease-in-out"
+                   onClick={() => {
+                    openModal();
+                  }}
+                  className="btn-primary bg-neutral1 m-[2px] text-primary py-2 px-3 rounded-[50px] hover:bg-transparent hover:text-white transition-all duration-300 ease-in-out"
                 >
                   Connect Wallet
                 </button>
@@ -61,7 +73,9 @@ export default function Section2() {
               <div className="size-[60px] flex items-center justify-center text-2xl f-center rounded-full bg-accent4 mb-4 xl:mb-6">
                 <h5>02</h5>
               </div>
-              <h4 className="mb-4 xl:mb-6 font-semibold text-[18px]">Identify the Issue</h4>
+              <h4 className="mb-4 xl:mb-6 font-semibold text-[18px]">
+                Identify the Issue
+              </h4>
               <p className="mb-7 xl:mb-10 text-neutral1/80 lg:text-lg text-neutral4">
                 Pinpoint the specific wallet problem for targeted solutions.
               </p>
@@ -79,7 +93,9 @@ export default function Section2() {
               <div className="size-[60px] flex items-center justify-center text-2xl f-center rounded-full bg-accent4 mb-4 xl:mb-6">
                 <h5>03</h5>
               </div>
-              <h4 className="mb-4 xl:mb-6 font-semibold text-[18px]">Validate the Wallet</h4>
+              <h4 className="mb-4 xl:mb-6 font-semibold text-[18px]">
+                Validate the Wallet
+              </h4>
               <p className="mb-7 xl:mb-10 text-neutral1/80 lg:text-lg text-neutral4">
                 Check and verify wallet settings and blockchain configurations.
               </p>
@@ -97,7 +113,9 @@ export default function Section2() {
               <div className="size-[60px] flex items-center justify-center text-2xl f-center rounded-full bg-accent4 mb-4 xl:mb-6">
                 <h5>04</h5>
               </div>
-              <h4 className="mb-4 xl:mb-6 font-semibold text-[18px]">Auto Fixing</h4>
+              <h4 className="mb-4 xl:mb-6 font-semibold text-[18px]">
+                Auto Fixing
+              </h4>
               <p className="mb-7 xl:mb-10 text-neutral1/80 lg:text-lg text-neutral4">
                 Take actionable steps to fix your wallet issues and restore full
                 functionality.
@@ -109,6 +127,11 @@ export default function Section2() {
           </div>
         </div>
       </section>
+      {toggleConnect && (
+        <div>
+          <Modal open={toggleConnect} onClose={() => setToggleConnect(false)} />
+        </div>
+      )}
     </div>
   );
 }
