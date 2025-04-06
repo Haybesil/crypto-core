@@ -100,7 +100,7 @@ export default function Hero() {
               <div className="w-[280px] h-[280px] md:w-[350px] md:h-[350px] absolute top-[6%] blur-[85px] left-0 bg-primary/50"></div>
             </div>
 
-            <div className="col-span-12 gap-6 grid grid-cols-12 xl:divide-x divide-[rgba(255,255,255,0.8)] pt-[100px] relative z-[2]">
+            <div className="col-span-12 gap-6 grid grid-cols-12 xl:divide-x divide-[rgba(255,255,255,0.8)] pt-[100px] relative z-[2] pl-3 lg:pl-0">
               <div className="col-span-6 md:col-span-3">
                 <h3 className="h3 mb-3 text-lg lg:text-[25px] font-bold text-white">
                   <span
