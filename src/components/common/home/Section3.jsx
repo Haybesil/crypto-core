@@ -23,7 +23,7 @@ export default function Section3() {
           alt=""
         />
 
-        <div className="container pb-[70px] pt-[70px] relative z-[2] pl-1 lg:pl-36">
+        <div className="container pb-[70px] pt-[70px] relative z-[2] pl-1 lg:pl-28">
           <div className="mb-10 xl:mb-[60px] flex flex-wrap justify-between items-center gap-5">
             <div className="max-w-lg pl-4 lg:pl-0">
               <h2 className="mb-2 fade_up_anim text-neutral1 text-[21px] lg:text-[40px] font-bold">

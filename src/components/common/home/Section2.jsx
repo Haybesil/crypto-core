@@ -23,7 +23,7 @@ export default function Section2() {
             <span className="h2 text-primary font-bold  underline">Started</span>
           </h2>
 
-          <div className="grid grid-cols-12 gap-4 xl:gap-6 z-[2] relative text-center text-neutral1/80 after:w-full after:h-full after:xl:h-[90%] after:absolute after:left-0 after:rounded-xl after:top-0 after:xl:top-[5%] after:bg-accent6 after:z-[-1] ml-2 lg:ml-36">
+          <div className="grid grid-cols-12 gap-4 xl:gap-6 z-[2] relative text-center text-neutral1/80 after:w-full after:h-full after:xl:h-[90%] after:absolute after:left-0 after:rounded-xl after:top-0 after:xl:top-[5%] after:bg-accent6 after:z-[-1] ml-2 lg:ml-28">
             {/* Step 01 */}
             <div
               data-delay="0.05"

@@ -4,7 +4,7 @@ export default function Section4() {
   return (
     <div>
       <section className="bg-accent2 pb-10">
-        <div className="container pt-[50px] pb-[30px] px-2 lg:px-0 lg:pl-36">
+        <div className="container pt-[50px] pb-[30px] px-2 lg:px-0 lg:pl-28">
           <div className="grid grid-cols-12 gap-4 mb-10 xl:mb-[20px]">
             <div className="col-span-12 md:col-span-12 xl:col-span-4">
               <h2
