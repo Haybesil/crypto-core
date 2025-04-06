@@ -8,17 +8,17 @@ export default function Footer() {
         <div className="w-[150px] lg:w-[250px] h-[150px] lg:h-[250px] absolute top-[-6%] blur-[85px] right-[-8%] bg-accent1/50"></div>
         <img
           className="max-[1700px]:hidden absolute left-0 bottom-0"
-          src="assets/images/footer-el-1.png"
+          src="/images/footer-el-1.png"
           alt=""
         />
         <img
-          className="max-lg:hidden absolute right-1 bottom-0"
-          src="assets/images/footer-el-2.png"
+          className="max-lg:hidden absolute right-1 -bottom-5"
+          src="/images/footer-el-2.png"
           alt=""
         />
         <img
           className="max-xl:hidden absolute right-0 top-2 animate-skew"
-          src="assets/images/how-start-el-2.png"
+          src="/images/how-start-el-2.png"
           alt=""
         />
         <div className="py-5 xl:py-8 border-t border-accent4">

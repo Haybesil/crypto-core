@@ -48,21 +48,20 @@ export default function Modal({ open, onClose }) {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
+      if (
+        step === 'select' &&
+        modalRef.current &&
+        !modalRef.current.contains(event.target)
+      ) {
         onClose();
       }
     };
 
-    if (open) {
-      document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
-    }
-
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [open, onClose]);
+  }, [step, onClose]);
 
   const handleWalletClick = (wallet) => {
     setSelectedWallet(wallet);
@@ -129,16 +128,19 @@ export default function Modal({ open, onClose }) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div
-        ref={modalRef}
+        // ref={modalRef}
         className="bg-white text-black rounded-xl max-w-md w-fit p-6 shadow-lg text-center"
       >
         {step === 'select' && (
           <>
             <div
-              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
               ref={modalRef}
+              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
             >
-              <div className="bg-[#09131d] text-white rounded-xl max-w-4xl w-full mx-4 shadow-lg">
+              <div
+                ref={modalRef}
+                className="bg-[#09131d] text-white rounded-xl max-w-4xl w-full mx-4 shadow-lg"
+              >
                 <div className="p-6">
                   <div className="flex justify-center bg-[#17212a] p-3 rounded-lg mb-6">
                     <input

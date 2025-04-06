@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from '../base/Modal';
 
 export default function Section3() {
+  const [toggleConnect, setToggleConnect] = useState(false);
+
+  const openModal = () => {
+    setToggleConnect(true);
+  };
+
   return (
     <div>
       <section className="bg-accent5 relative overflow-hidden">
@@ -120,26 +127,22 @@ export default function Section3() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="col-span-12 md:col-span-4 p-4"
-               
+                onClick={() => {
+                  openModal();
+                }}
+                className="col-span-12 md:col-span-4 p-4 cursor-pointer"
               >
-                <div className="features-item">
-                  <div className="features-content">
+                <div className="features-item flex gap-5 items-center rounded-[15px]">
+                  <div className="features-content text-[30px] lg:text-[35px] font-semibold mb-[25px] text-white">
                     <h2 className="title">
-                      <button
-                        type="button"
-                       
-                        className="text-left"
-                      >
+                      <button type="button" className="text-left">
                         {item.title}
                       </button>
                     </h2>
                     <p style={{ fontSize: '12px' }}>{item.desc}</p>
                   </div>
                   <div className="features-img">
-                    <button
-                      type="button"
-                    >
+                    <button type="button">
                       <i
                         className={item.icon}
                         style={{ fontSize: '72px', color: 'lightblue' }}
@@ -152,6 +155,11 @@ export default function Section3() {
           </div>
         </div>
       </section>
+      {toggleConnect && (
+        <div>
+          <Modal open={toggleConnect} onClose={() => setToggleConnect(false)} />
+        </div>
+      )}
     </div>
   );
 }
